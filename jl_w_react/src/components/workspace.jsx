@@ -1,12 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 import { Switch, Route } from "react-router-dom";
-import Home from "./home";
-import JobLibrary from "./jobLibrary";
-import CareerFamily from "./careerFamily";
 
+import Home from "./Home";
+
+import JobLibrary from "./JobLibrary";
+import CareerFamily from "./Career";
+import "../stylesheets/workspace.scss";
 const Workspace = () => {
   return (
-    <div className="workspace">
+    <div className="workspace-content">
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/joblibrary" exact component={JobLibrary} />

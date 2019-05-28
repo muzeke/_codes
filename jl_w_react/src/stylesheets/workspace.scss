@@ -1,0 +1,12 @@
+@import "colors.scss";
+
+.workspace-content {
+  padding: 25px;
+}
+.workspace {
+  display: flex;
+  font-family: "Manulife JH Sans Regular";
+}
+.workspace > * {
+  flex: 10;
+}

@@ -1,19 +1,40 @@
+@import "colors.scss";
+
 nav.navigation {
-  flex: 2;
+  flex: 2 !important;
+  border-right: 1px solid #ededed;
+  position: relative;
+  min-width: 250px;
   background: #fff;
+  height: 80vh;
 
-  .nav-item > a {
-    display: block;
-    padding: 10px 17px;
-    border-bottom: 1px solid #ededed;
-    font-size: 17px;
-    cursor: pointer;
-    position: relative;
-    background: #fff;
-    text-decoration: none;
-  }
+  .nav-item {
+    a {
+      display: block;
+      padding: 10px 17px;
+      border-bottom: 1px solid #ededed;
+      font-size: 17px;
+      cursor: pointer;
+      position: relative;
+      background: #fff;
+      text-decoration: none;
+      color: $navy;
+    }
 
-  .nav-item > a.active {
-    border-left: 6px solid $manulife_green1;
+    a.active {
+      background: #fafafa;
+    }
+
+    a.active:before,
+    a:hover:before {
+      content: "";
+      background: #00bf66;
+      position: absolute;
+      display: block;
+      height: 100%;
+      left: 0;
+      top: 0px;
+      width: 4px;
+    }
   }
 }

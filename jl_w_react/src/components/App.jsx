@@ -1,24 +1,44 @@
 import React, { Component } from "react";
-import "../stylesheets/main.scss";
-import Header from "./header";
-import Breadcrumb from "./breadcrumb";
-import Navigation from "./navigation";
-import Workspace from "./workspace";
-import { BrowserRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import "../stylesheets/apps.scss";
+import Header from "../components/Header";
+import Navigation from "../components/Navigation";
+import Workspace from "../components/Workspace";
+class App extends Component {
+  alertErrors = () => {
+    if (this.props.reducer.ajaxError !== "")
+      alert(this.props.reducer.ajaxError);
+  };
+  render() {
+    //destructure states
 
-const App = () => {
-  return (
-    <React.Fragment>
-      <Header />
-      <Breadcrumb />
-      <div className="body-contents">
-        <BrowserRouter basename="/sites/JobLibrary/Pages/User.aspx#">
+    return (
+      <React.Fragment>
+        <Header />
+        <div className="workspace">
+          {this.alertErrors()}
           <Navigation />
           <Workspace />
-        </BrowserRouter>
-      </div>
-    </React.Fragment>
-  );
+        </div>
+      </React.Fragment>
+    );
+  }
+}
+
+const mapStateToProps = state => {
+  return state;
 };
 
-export default App;
+const mapDispatchToProps = dispatch => {
+  return {
+    onFetchUser: () =>
+      dispatch({
+        type: "FETCH_USER"
+      })
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);

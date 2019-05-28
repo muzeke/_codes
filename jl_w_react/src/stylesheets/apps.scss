@@ -1,0 +1,36 @@
+@import "colors.scss";
+header {
+  div.banner {
+    height: 4rem;
+    width: 100%;
+    color: #fff;
+    background: #424559;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  div.banner > div.banner-title {
+    font-size: 20px;
+    margin-left: 21px;
+    font-family: "Manulife JH Sans Demibold";
+    color: #fff;
+  }
+
+  .banner-title > img {
+    max-width: 350px;
+    margin-top: 8px;
+    margin-left: -25px;
+  }
+}
+
+.subHeader {
+  background: $green-4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 17px;
+  font-family: "Manulife JH Sans Demibold";
+  padding: 10px;
+}

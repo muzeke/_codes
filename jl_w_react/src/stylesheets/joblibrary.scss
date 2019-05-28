@@ -1,0 +1,83 @@
+@import "colors.scss";
+
+.panel.jl {
+  .panel-body {
+    color: $navy;
+    padding: 25px;
+    font-size: 15px;
+  }
+  .panel-header {
+    border-bottom: 1px dashed $navy-4;
+    padding: 15px;
+    cursor: pointer;
+
+    span {
+      font-family: "Manulife JH Sans Demibold";
+      font-size: 20px;
+    }
+
+    b {
+      border-style: solid;
+      border-width: 0.2em 0.2em 0 0;
+      content: "";
+      display: inline-block;
+      height: 0.45em;
+      position: relative;
+      transform: rotate(135deg);
+      vertical-align: top;
+      width: 0.45em;
+      margin-left: 10px;
+      margin-top: 10px;
+    }
+  }
+
+  div.select-option {
+    position: absolute;
+    box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+    border: 1px solid #ededed;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    min-width: 350px;
+    z-index: 2;
+    // display: none;
+  }
+  .select-option--search > input {
+    border: 1px solid #ededed;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 14px;
+    background: #fafafa;
+  }
+  div.select-options {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    max-height: 350px;
+
+    .select-options--item {
+      box-sizing: border-box;
+      font-size: 15px;
+      padding: 20px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .select-options--item.active,
+    .select-options--item:hover {
+      background-color: #fafafa;
+    }
+
+    .select-options--item.active:before {
+      content: "";
+      background: #00bf66;
+      position: absolute;
+      display: block;
+      height: 100%;
+      left: 0;
+      top: 0px;
+      width: 4px;
+    }
+  }
+}
