@@ -1,0 +1,19 @@
+nav.navigation {
+  flex: 2;
+  background: #fff;
+
+  .nav-item > a {
+    display: block;
+    padding: 10px 17px;
+    border-bottom: 1px solid #ededed;
+    font-size: 17px;
+    cursor: pointer;
+    position: relative;
+    background: #fff;
+    text-decoration: none;
+  }
+
+  .nav-item > a.active {
+    border-left: 6px solid $manulife_green1;
+  }
+}
